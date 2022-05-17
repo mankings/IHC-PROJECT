@@ -4,12 +4,34 @@
 
 .header {
   background-color: #f5f5dc;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  display: inline-block;
+  align-items: left;
+  justify-content: left;
   font-size: calc(10px + 2vmin);
   color: #282c34;
 }
 
+.header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header li {
+  display: inline;
+  float: left;
+}
+
+.header li button {
+  display: block;
+  color: black;
+  border: none;
+  text-align: center;
+  padding: 14px 16px;
+}
+
+.title {
+  
+}
 
