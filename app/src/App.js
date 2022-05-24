@@ -5,7 +5,8 @@ import Header from './Header'
 function App() {
   return (
     <div className="app">
-      <Header title="StampHub"/>
+          <Header title="StampHub" />
+          <Body title="Tags"/>
     </div>
   );
 }
