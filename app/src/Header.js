@@ -1,18 +1,16 @@
 import React from 'react'
 import SelectionOptions from './SelectionOptions'
-import { Button, Navbar, Nav, Container, Form, FormControl ,Modal,Col,Row} from 'react-bootstrap'
+import { Button, Navbar, Nav, Form, Container,FormControl ,Modal,Col,Row} from 'react-bootstrap'
 import './App.css'
 import styled from "styled-components";
 import { useEffect, useState } from "react";
+import FileUploadComponent from './FileUploadComponent';
 
 
 
 
 function Header(props) {
 
-  const fileSelectorHandler = event => {
-    console.log(event);
-  }
 
 
 
@@ -34,7 +32,7 @@ function Header(props) {
                 />{' '}
                 StampHub
               </Navbar.Brand>
-              <Nav className="me-auto">
+              <Nav className="mr-auto">
                 <Nav.Link>
                   <Button onClick={addOpen}>+ Add Stamp</Button>
                 </Nav.Link>
@@ -58,9 +56,8 @@ function Header(props) {
             </Container>
           </Navbar>
 
-       {/*    <input type="submit" value="Search" onClick={onClick} />
 
-          { showResults && <Title title="good"/> } */}
+{/* Modals    ---------------------------------------------------------------------------------- */}
         
         
         <Modal         size="lg" show={addShow} onHide={addClose}>
@@ -73,12 +70,8 @@ function Header(props) {
                 {/* First Collumn of Modal, Image Upload */}
                 <Col>
 
-
-
-                  <input type={"file"} onChange={fileSelectorHandler}/>
                 
-                
-                
+                  <FileUploadComponent/>
                 
                 </Col>
                 {/* Second Collum of Modal */}
@@ -98,10 +91,10 @@ function Header(props) {
                         </Form.Group>
 
                         <Form.Group as={Col} controlId="formGridState">
-                          <Form.Select defaultValue="Choose...">
+                          <Form.Control as="select">
                             <SelectionOptions/>
-                          </Form.Select>
-                      </Form.Group>
+                          </Form.Control> 
+                        </Form.Group>
                     </Row> 
                   </Col>
                 </Row>
