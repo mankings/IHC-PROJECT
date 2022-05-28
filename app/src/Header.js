@@ -6,6 +6,13 @@ import styled from "styled-components";
 import { useEffect, useState } from "react";
 import FileUploadComponent from './FileUploadComponent';
 
+import Scroll from 'react-scroll';
+var DirectLink = Scroll.DirectLink;
+var Element = Scroll.Element;
+var Events = Scroll.Events;
+var scroll = Scroll.animateScroll;
+var scrollSpy = Scroll.scrollSpy;
+
 
 
 
@@ -96,6 +103,23 @@ function Header(props) {
                           </Form.Control> 
                         </Form.Group>
                     </Row> 
+
+                    <Row scrollable={true}>
+                      <Container>
+                        <Element className="element" id="containerElement" style={{
+                        height: '100px',
+                        overflow: 'scroll',
+                        }}>
+                                <Form.Check 
+                                  type={'checkbox'}
+                                  label={"tag1"}
+                                />
+                          
+                        </Element>
+                    
+                      </Container>
+                    </Row>
+
                   </Col>
                 </Row>
                 </Form>
