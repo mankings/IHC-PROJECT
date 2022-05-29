@@ -44,7 +44,7 @@ const FileUploadComponent = () => {
         <div>
             <Row  className='d-flex justify-content-center'>
                 <Button onClick={handleClick}>
-                  Upload a file
+                  Upload Image of Stamp
                 </Button>
                 <input
                   type="file"
