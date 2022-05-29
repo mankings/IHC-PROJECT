@@ -221,25 +221,26 @@ function Header(props) {
                           <Button >Add Tag</Button>
                         </Col>
                     </Row> 
-
-
-
-                    <div className="tag-list">
-                      <ListGroup>
-                          {foundUsers && foundUsers.length > 0 ? (
-                            foundUsers.map((user) => (
-                              <ListGroup.Item id={`${user}`}>
-                                {user}
-                              </ListGroup.Item>
-                            ))
-                          ) : (
-                            <h4>No results found!</h4>
-                          )}
-                      </ListGroup>
-                    </div>
-                 
-
-
+                  <Container>
+                    <Element className="element" id="containerElement" style={{
+                            height: '320px',
+                            }}>
+                            
+                        <div className="tag-list">
+                          <ListGroup>
+                              {foundUsers && foundUsers.length > 0 ? (
+                                foundUsers.map((user) => (
+                                  <ListGroup.Item id={`${user}`}>
+                                    {user}
+                                  </ListGroup.Item>
+                                ))
+                              ) : (
+                                <h4>No results found!</h4>
+                              )}
+                          </ListGroup>
+                        </div>
+                    </Element>
+                  </Container>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={tagClose}>
