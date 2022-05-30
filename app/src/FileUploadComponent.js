@@ -11,6 +11,8 @@ const FileUploadComponent = () => {
     const [preview, setPreview] = useState()
     const hiddenFileInput = React.useRef(null);
 
+
+
     const handleClick = event => {
         hiddenFileInput.current.click();
       };
@@ -22,7 +24,7 @@ const FileUploadComponent = () => {
             setPreview(undefined)
             return
         }
-
+        console.log(selectedFile)
         const objectUrl = URL.createObjectURL(selectedFile)
         setPreview(objectUrl)
 
@@ -39,6 +41,8 @@ const FileUploadComponent = () => {
         // I've kept this example simple by using the first image instead of multiple
         setSelectedFile(e.target.files[0])
     }
+
+
 
     return (
         <div>
