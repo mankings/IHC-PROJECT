@@ -5,7 +5,7 @@ import './App.css'
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import FileUploadComponent from './FileUploadComponent';
-
+import { FaRegEdit , FaRegTrashAlt } from "react-icons/fa";
 import Scroll from 'react-scroll';
 var Element = Scroll.Element;
 
@@ -209,7 +209,7 @@ function Header(props) {
                 </Modal.Header>
                 <Modal.Body>
                     <Row>
-                        <Col>
+                        <Col className='d-inline-block align-top'>
                           <Form.Group>
                           <Form.Control placeholder="Search Tags" value={name}
                             onChange={filter}
@@ -217,7 +217,7 @@ function Header(props) {
 
                           </Form.Group>
                         </Col>  
-                        <Col className=''>
+                        <Col className='d-inline-block'>
                           <Button >Add Tag</Button>
                         </Col>
                     </Row> 
@@ -231,7 +231,17 @@ function Header(props) {
                               {foundUsers && foundUsers.length > 0 ? (
                                 foundUsers.map((user) => (
                                   <ListGroup.Item id={`${user}`}>
-                                    {user}
+                                   
+                                    <span>{user}</span>  
+                                     
+                                    <Button>
+                                      <FaRegEdit/>
+                                    </Button>
+
+                                    <Button>
+                                      <FaRegTrashAlt/>
+                                    </Button>
+                                  
                                   </ListGroup.Item>
                                 ))
                               ) : (
