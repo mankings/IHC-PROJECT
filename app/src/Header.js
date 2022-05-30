@@ -2,6 +2,9 @@ import React from 'react'
 import SelectionOptions from './SelectionOptions'
 import { Button, Navbar, Nav, Form, Container,FormControl ,Modal,Col,Row,ListGroup} from 'react-bootstrap'
 import './App.css'
+import './index.css'
+
+import Slider from '@mui/material/Slider';
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import FileUploadComponent from './FileUploadComponent';
@@ -15,6 +18,11 @@ const Tags = ['BirdThemed', 'AnimalThemed','War Stamps','Landscape Stamps','Writ
 
 
 function Header(props) {
+
+
+
+  /* Dropdown Menu */
+  const [dropOpen, SetDropDown] = useState(false);
 
 
 
@@ -84,7 +92,8 @@ function Header(props) {
 
               </Nav>
 
-              <Button className='ms-auto'> Filters </Button>
+              <Button className='ms-auto' onClick={() => SetDropDown(!dropOpen)}> Filters </Button>
+              {dropOpen && <Dropdown/>}
               <Form className="d-flex">
                 <FormControl
                   type="search"
@@ -95,6 +104,7 @@ function Header(props) {
               </Form>
 
             </Container>
+            
           </Navbar>
 
 
@@ -163,7 +173,7 @@ function Header(props) {
                   </Row>
                   
                   <div className="tag-list">
-                  <Form>
+                 
                         {foundUsers && foundUsers.length > 0 ? (
                           foundUsers.map((user) => (
                             <Form.Check 
@@ -175,7 +185,7 @@ function Header(props) {
                         ) : (
                           <h1>No results found!</h1>
                         )}
-                    </Form>
+                  
                   </div>
                  
 
@@ -209,7 +219,7 @@ function Header(props) {
                 </Modal.Header>
                 <Modal.Body>
                     <Row>
-                        <Col className='d-inline-block align-top'>
+                        <Col sm={10}>
                           <Form.Group>
                           <Form.Control placeholder="Search Tags" value={name}
                             onChange={filter}
@@ -217,13 +227,14 @@ function Header(props) {
 
                           </Form.Group>
                         </Col>  
-                        <Col className='d-inline-block'>
+                        <Col sm={2}>
                           <Button >Add Tag</Button>
                         </Col>
                     </Row> 
                   <Container>
                     <Element className="element" id="containerElement" style={{
                             height: '320px',
+                            overflow: 'scroll'
                             }}>
                             
                         <div className="tag-list">
@@ -231,17 +242,22 @@ function Header(props) {
                               {foundUsers && foundUsers.length > 0 ? (
                                 foundUsers.map((user) => (
                                   <ListGroup.Item id={`${user}`}>
-                                   
-                                    <span>{user}</span>  
-                                     
-                                    <Button>
-                                      <FaRegEdit/>
-                                    </Button>
-
-                                    <Button>
-                                      <FaRegTrashAlt/>
-                                    </Button>
-                                  
+                                   <Row>
+                                     <Col xs={14} md={8}>
+                                        <span>{user}</span>  
+                                      </Col>
+                                      
+                                     <Col xs={2} md={1}>
+                                        <Button>
+                                          <FaRegEdit/>
+                                        </Button>
+                                      </Col>
+                                      <Col  xs={2} md={1}>
+                                        <Button>
+                                          <FaRegTrashAlt/>
+                                        </Button>
+                                      </Col>
+                                    </Row>
                                   </ListGroup.Item>
                                 ))
                               ) : (
@@ -262,8 +278,130 @@ function Header(props) {
                 </Modal.Footer>
             </Modal>
         
+
+
+
         </div>
     );
+}
+
+
+
+
+
+function Dropdown(){
+
+  function valuetext(value) {
+    return `${value}°C`;
+  }
+  
+  const minDistance = 10;
+  
+
+    const [value1, setValue1] = React.useState([1500, 2022]);
+  
+    const handleChange1 = (event, newValue, activeThumb) => {
+      if (!Array.isArray(newValue)) {
+        return;
+      }
+  
+      if (activeThumb === 0) {
+        setValue1([Math.min(newValue[0], value1[1] - minDistance), value1[1]]);
+      } else {
+        setValue1([value1[0], Math.max(newValue[1], value1[0] + minDistance)]);
+      }
+    }
+
+    const marks = [
+      {
+        value: 0,
+        label: '1500',
+      },
+      {
+        value: 50,
+        label: '1761',
+      },
+      {
+        value: 100,
+        label: '2022',
+      },
+    ];
+  
+
+
+
+
+    const [name, setName] = useState('');
+    const [foundUsers, setFoundUsers] = useState(Tags);
+    const filter = (e) => {
+      const keyword = e.target.value;
+  
+      if (keyword !== '') {
+        const results = Tags.filter((tag) => {
+          return tag.toLowerCase().startsWith(keyword.toLowerCase());
+          // Use the toLowerCase() method to make it case-insensitive
+        });
+        setFoundUsers(results);
+      } else {
+        setFoundUsers(Tags.slice(0,6));
+        // If the text field is empty, show all users
+      }
+  
+      setName(keyword);
+    };
+  
+  
+
+
+
+  return (
+    <div className='dropdown'>
+      
+        <h5>Year</h5>
+      
+
+      <Slider
+        getAriaLabel={() => 'Minimum distance'}
+        value={value1}
+        onChange={handleChange1}
+        valueLabelDisplay="auto"
+        getAriaValueText={valuetext}
+        disableSwap
+        marks={marks}
+      />
+      <hr></hr>
+      <Form.Group as={Col} controlId="formGridState">
+        <Form.Control as="select">
+          <SelectionOptions/>
+        </Form.Control> 
+      </Form.Group>
+    <hr></hr>
+    <Container>
+      <Element
+        className="element" id="containerElement" style={{
+          height: '300px',
+          overflow: 'scroll',
+          }}
+      > 
+        <div className="tag-list divTags"  >
+
+                   {foundUsers && foundUsers.length > 0 ? (
+                     foundUsers.map((user) => (
+                       <Form.Check 
+                       type={'checkbox'}
+                       id={`${user}`}
+                       label={`${user}`}
+                     />
+                     ))
+                   ) : (
+                     <h1>No results found!</h1>
+                   )}
+
+        </div>
+      </Element>
+    </Container>
+    </div>
+  );
 }
 
 export default Header
