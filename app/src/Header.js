@@ -60,13 +60,13 @@ function Header(props) {
     let newTags = [];
     let newFoundTags = [];
 
-    for(let i = 0; i < tags.length; i++) {
+    for (let i = 0; i < tags.length; i++) {
       if (tags[i] !== t) {
         newTags.push(tags[i]);
       }
     }
 
-    for(let i = 0; i < foundTags.length; i++) {
+    for (let i = 0; i < foundTags.length; i++) {
       if (foundTags[i] !== t) {
         newFoundTags.push(foundTags[i]);
       }
@@ -77,7 +77,7 @@ function Header(props) {
   }
 
   const addTag = (t) => {
-    if(tags.includes(t)) return;
+    if (tags.includes(t)) return;
 
     let newTags = tags;
     newTags.push(t);
@@ -129,7 +129,7 @@ function Header(props) {
         </Container>
 
       </Navbar>
-      {dropOpen && <Dropdown />}
+
 
       {/* Modals    ---------------------------------------------------------------------------------- */}
 
@@ -182,21 +182,17 @@ function Header(props) {
                           <div className="d-flex justify-content-between">
                             <div className='p-2 col-example text-left'>
                               <Form.Group>
-
                                 <Form.Control placeholder="Search Tags" value={name}
                                   onChange={filter}
                                   className="input" />
-
                               </Form.Group>
                             </div>
                             <div className='p-2 col-example text-left'>
-                              <Button >Add Tag</Button>
+                              <Button onClick={() => addTag(name)} >Add Tag</Button>
                             </div>
                           </div>
                         </Row>
-
                         <div className="tag-list">
-
                           {foundTags && foundTags.length > 0 ? (
                             foundTags.map((tag) => (
                               <Form.Check
@@ -210,18 +206,14 @@ function Header(props) {
                           )}
 
                         </div>
-
-
                       </div>
                     </Element>
-
                   </Container>
                 </Row>
 
               </Col>
             </Row>
           </Form>
-
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={addClose}>
@@ -232,7 +224,6 @@ function Header(props) {
           </Button>
         </Modal.Footer>
       </Modal>
-
 
 
       {/* Tags Modal ---------------------------------------------- */}
@@ -303,7 +294,7 @@ function Header(props) {
 
 
 
-
+      {dropOpen && <Dropdown />}
     </div>
   );
 }
