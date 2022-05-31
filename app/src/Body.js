@@ -6,14 +6,11 @@ import FileUploadComponent from './FileUploadComponent';
 import React, { useEffect, useState } from "react";
 import SelectionOptions from './SelectionOptions'
 import Scroll from 'react-scroll';
+import './App.css'
 var Element = Scroll.Element;
 
 
 const Tags = ['BirdThemed', 'AnimalThemed','War Stamps','Landscape Stamps','Writers and Artists','Commemorative stamps','Definitive stamps','InsectThemed','People on stamps','Stamps on stamps'];
-
-
-
-
 
 
 function Body(props) {
@@ -47,7 +44,6 @@ function EditTags(props) {
   console.log(props.Year)
 
   return (
-             
       <Modal  centered size="lg" show={addShow} onHide={addClose}>
       <Modal.Header closeButton>
           <Modal.Title>Edit Stamp</Modal.Title>

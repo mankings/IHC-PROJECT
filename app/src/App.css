@@ -5,6 +5,7 @@
 .header {
   background-color: #f5f5dc;
   width: 100%;
+  position: relative;
   display: inline-block;
   align-items: left;
   justify-content: left;
@@ -12,24 +13,19 @@
   color: #282c34;
 }
 
-.header ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+.body {
+  position: relative;
 }
 
-.header li {
-  display: inline;
-  float: left;
+.dropdown {
+  position: absolute;
+  top: 58px;
+  left: 65%;
+  width: 300px;
+  background: whitesmoke;
+  transform: translateX(-45%);
+  background-color: var(--bg);
+  padding: 1rem;
+  overflow: hidden;
+  z-index: 1;
 }
-
-.header li button {
-  display: block;
-  color: black;
-  border: none;
-  text-align: center;
-  padding: 14px 16px;
-}
-
-
-

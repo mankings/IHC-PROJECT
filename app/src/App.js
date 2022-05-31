@@ -12,7 +12,6 @@ function App() {
       <Header title="StampHub"/>
       <Body title="StampHubBody"/>
 
-
     </div>
   );
 }

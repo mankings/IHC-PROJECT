@@ -117,7 +117,6 @@ function Header(props) {
           </Nav>
 
           <Button className='ms-auto' onClick={() => SetDropDown(!dropOpen)}> Filters </Button>
-          {dropOpen && <Dropdown />}
           <Form className="d-flex">
             <FormControl
               type="search"
@@ -130,7 +129,7 @@ function Header(props) {
         </Container>
 
       </Navbar>
-
+      {dropOpen && <Dropdown />}
 
       {/* Modals    ---------------------------------------------------------------------------------- */}
 
