@@ -165,9 +165,27 @@ function EditTags(props) {
                 <Carousel.Item>
                   <Row style={{padding: '0 5%'}}>
                     <Card style={{ width: '14rem'}} as={Col}>
+                      <Card.Img  variant="top" src="AnimalThemed\australia-circa-2015-a-stamp-printed-in-australia-shows-the-grey-kangaroo-australian-animal-series-circa-2015-RTBYFR.jpg" style={{height: '10rem'}} />
+                      <Card.Body>
+                        <Card.Title>Grey Kangaroo, Australian Animal series</Card.Title>
+                        <ListGroup className="list-group-flush" >
+                          <ListGroupItem>
+                            Year: 2015
+                          </ListGroupItem>
+                          <ListGroupItem>
+                            Country: Australia
+                          </ListGroupItem>
+                        </ListGroup>
+                      </Card.Body>
+                      <Card.Body>
+                        <Button variant="primary" onClick={addOpen}>Edit Stamp</Button>
+                        {addShow ? <EditTags Name="Grey Kangaroo, Australian Animal series" Year="2010"/>: null}
+                      </Card.Body>
+                    </Card>
+                    <Card style={{ width: '14rem'}} as={Col}>
                       <Card.Img  variant="top" src="AnimalThemed\dog Stamp.jpg" style={{height: '10rem'}} />
                       <Card.Body>
-                        <Card.Title>Stamp Name</Card.Title>
+                        <Card.Title>Atelier Acácio Santos Animal Abandonment</Card.Title>
                         <ListGroup className="list-group-flush" >
                           <ListGroupItem>
                             Year: 2010
@@ -179,13 +197,13 @@ function EditTags(props) {
                       </Card.Body>
                       <Card.Body>
                         <Button variant="primary" onClick={addOpen}>Edit Stamp</Button>
-                        {addShow ? <EditTags Name="DogStamp" Year="2010"/>: null}
+                        {addShow ? <EditTags Name="Grey Kangaroo, Australian Animal series" Year="2010"/>: null}
                       </Card.Body>
                     </Card>
                     <Card style={{ width: '14rem'}} as={Col}>
                       <Card.Img  variant="top" src="AnimalThemed\FishStamp.jpg" style={{height: '10rem'}} />
                       <Card.Body>
-                        <Card.Title>Stamp Name</Card.Title>
+                        <Card.Title>10 International Year of Biodiversity Thunnus thynnus</Card.Title>
                         <ListGroup className="list-group-flush" >
                           <ListGroupItem>
                             Year: 2010
@@ -196,13 +214,13 @@ function EditTags(props) {
                         </ListGroup>
                       </Card.Body>
                       <Card.Body>
-                        <Button variant="primary">Edit Stamp</Button>
+                        <Button variant="primary" onClick={addOpen}>Edit Stamp</Button>
                       </Card.Body>
                     </Card>
                     <Card style={{ width: '14rem'}} as={Col}>
                       <Card.Img  variant="top" src="AnimalThemed\Panda Stamp.jpg" style={{height: '10rem'}} />
                       <Card.Body>
-                        <Card.Title>Stamp Name</Card.Title>
+                        <Card.Title>10 International Year of Biodiversity Panda</Card.Title>
                         <ListGroup className="list-group-flush" >
                           <ListGroupItem>
                             Year: 2010
@@ -213,7 +231,7 @@ function EditTags(props) {
                         </ListGroup>
                       </Card.Body>
                       <Card.Body>
-                        <Button variant="primary">Edit Stamp</Button>
+                        <Button variant="primary" onClick={addOpen}>Edit Stamp</Button>
                       </Card.Body>
                     </Card>
                   </Row>
@@ -221,142 +239,241 @@ function EditTags(props) {
                 <Carousel.Item>
                     <Row style={{padding: '0 5%'}}>
                     <Card style={{ width: '14rem'}} as={Col}>
-                      <Card.Img  variant="top" src="AnimalThemed\Panda Stamp.jpg" style={{height: '10rem'}} />
+                      <Card.Img  variant="top" src="AnimalThemed\frog.jpg" style={{height: '10rem'}} />
                       <Card.Body>
-                        <Card.Title>Stamp Name</Card.Title>
+                        <Card.Title>European Common Frog (Rana temporaria)</Card.Title>
                         <ListGroup className="list-group-flush" >
                           <ListGroupItem>
-                            Year: 2010
+                            Year: 2019
                           </ListGroupItem>
                           <ListGroupItem>
-                            Country: Portugal
+                            Country: Russia 
                           </ListGroupItem>
                         </ListGroup>
                       </Card.Body>
                       <Card.Body>
-                        <Button variant="primary">Edit Stamp</Button>
+                        <Button variant="primary" onClick={addOpen}>Edit Stamp</Button>
                       </Card.Body>
                     </Card>
                     <Card style={{ width: '14rem'}} as={Col}>
-                      <Card.Img  variant="top" src="AnimalThemed\Panda Stamp.jpg" style={{height: '10rem'}} />
+                      <Card.Img  variant="top" src="AnimalThemed\falkland-islands-penguin.jpg" style={{height: '10rem'}} />
                       <Card.Body>
-                        <Card.Title>Stamp Name</Card.Title>
+                        <Card.Title>Centenary 5s black and yellow-orange penguin </Card.Title>
                         <ListGroup className="list-group-flush" >
                           <ListGroupItem>
-                            Year: 2010
+                            Year: 1933
                           </ListGroupItem>
                           <ListGroupItem>
-                            Country: Portugal
+                            Country: Falkland Islands
                           </ListGroupItem>
                         </ListGroup>
                       </Card.Body>
                       <Card.Body>
-                        <Button variant="primary">Edit Stamp</Button>
+                        <Button variant="primary" onClick={addOpen}>Edit Stamp</Button>
                       </Card.Body>
                     </Card>
                     <Card style={{ width: '14rem'}} as={Col}>
-                      <Card.Img  variant="top" src="AnimalThemed\Panda Stamp.jpg" style={{height: '10rem'}} />
+                      <Card.Img  variant="top" src="AnimalThemed\Footbal chita.jpg" style={{height: '10rem'}} />
                       <Card.Body>
-                        <Card.Title>Stamp Name</Card.Title>
+                        <Card.Title>2010 Football World Cup</Card.Title>
                         <ListGroup className="list-group-flush" >
                           <ListGroupItem>
                             Year: 2010
                           </ListGroupItem>
                           <ListGroupItem>
-                            Country: Portugal
+                            Country: South Africa
                           </ListGroupItem>
                         </ListGroup>
                       </Card.Body>
                       <Card.Body>
-                        <Button variant="primary">Edit Stamp</Button>
+                        <Button variant="primary" onClick={addOpen}>Edit Stamp</Button>
+                      </Card.Body>
+                    </Card>
+                    <Card style={{ width: '14rem'}} as={Col}>
+                      <Card.Img  variant="top" src="AnimalThemed\stock-photo-mauritius-circa-a-postage-stamp-from-mauritius-shows-a-blue-swordfish-marlin-with-a-2110793873.jpg" style={{height: '10rem'}} />
+                      <Card.Body>
+                        <Card.Title>Mauritius</Card.Title>
+                        <ListGroup className="list-group-flush" >
+                          <ListGroupItem>
+                            Year: 1969  
+                          </ListGroupItem>
+                          <ListGroupItem>
+                            Country: United Kingdom
+                          </ListGroupItem>
+                        </ListGroup>
+                      </Card.Body>
+                      <Card.Body>
+                        <Button variant="primary" onClick={addOpen}>Edit Stamp</Button>
                       </Card.Body>
                     </Card>
                   </Row>
                 </Carousel.Item>
             </Carousel>
             
-            <div>
-                <h1>War Stamps</h1>
-            </div>
-            
+          <br></br>
+
+          <Container fluid>
+            <Row style={{padding: '0 5%'}}>
+              
+                <Col className="align-items" style={{padding: '1% 0%'}}>
+                    <h2>War Stamps</h2>
+                </Col>
+                <Col className="align-items" style={{padding: '1% 0%'}} >
+                    <Button>See All Stamps in War Themed</Button>
+                </Col>
+              
+            </Row>
+          </Container>
+
+          
 
             <Carousel>
                 <Carousel.Item>
                   <Row style={{padding: '0 5%'}}>
-                    <Card style={{ width: '14rem'}} as={Col} bg={'danger'}>
-                      <Card.Img  variant="top" src="logo.png" style={{height: '10rem'}} />
+                    <Card style={{ width: '14rem'}} as={Col}>
+                      <Card.Img  variant="top" src="War Themed\antigua.jpg" style={{height: '10rem'}} />
                       <Card.Body>
-                        <Card.Title>Stamp Name</Card.Title>
-                        <Card.Text>
-                          Some quick example text to build on the card title and make up the bulk of
-                          the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
+                        <Card.Title>Antigua - Canons </Card.Title>
+                        <ListGroup className="list-group-flush" >
+                          <ListGroupItem>
+                            Year: 1978
+                          </ListGroupItem>
+                          <ListGroupItem>
+                            Country: United Kingdom 
+                          </ListGroupItem>
+                        </ListGroup>
+                      </Card.Body>
+                      <Card.Body>
+                        <Button variant="primary" onClick={addOpen}>Edit Stamp</Button>
                       </Card.Body>
                     </Card>
-                    <Card style={{ width: '14rem'}} as={Col} bg={'danger'}>
-                      <Card.Img  variant="top" src="logo.png" style={{height: '10rem'}} />
+                    <Card style={{ width: '14rem'}} as={Col}>
+                      <Card.Img  variant="top" src="War Themed\EndOFWW2.jpg" style={{height: '10rem'}} />
                       <Card.Body>
-                        <Card.Title></Card.Title>
-                        <Card.Text>
-                          Some quick example text to build on the card title and make up the bulk of
-                          the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
+                        <Card.Title>End of world war II s/s</Card.Title>
+                        <ListGroup className="list-group-flush" >
+                          <ListGroupItem>
+                            Year: 1995
+                          </ListGroupItem>
+                          <ListGroupItem>
+                            Country: Uzbekistan 
+                          </ListGroupItem>
+                        </ListGroup>
+                      </Card.Body>
+                      <Card.Body>
+                        <Button variant="primary" onClick={addOpen}>Edit Stamp</Button>
+                        {addShow ? <EditTags Name="DogStamp" Year="2010"/>: null}
                       </Card.Body>
                     </Card>
-                    <Card style={{ width: '14rem'}} as={Col} bg={'danger'}>
-                      <Card.Img  variant="top" src="logo.png" style={{height: '10rem'}} />
+                    <Card style={{ width: '14rem'}} as={Col}>
+                      <Card.Img  variant="top" src="War Themed\Biplane Heavy Bomber.jpg" style={{height: '10rem'}} />
                       <Card.Body>
-                        <Card.Title></Card.Title>
-                        <Card.Text>
-                          Some quick example text to build on the card title and make up the bulk of
-                          the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
+                        <Card.Title>RAF Biplane Heavy Bomber Aircraft</Card.Title>
+                        <ListGroup className="list-group-flush" >
+                          <ListGroupItem>
+                            Year: 1993
+                          </ListGroupItem>
+                          <ListGroupItem>
+                            Country: United Kingdom 
+                          </ListGroupItem>
+                        </ListGroup>
+                      </Card.Body>
+                      <Card.Body>
+                        <Button variant="primary" onClick={addOpen}>Edit Stamp</Button>
+                      </Card.Body>
+                    </Card>
+                    <Card style={{ width: '14rem'}} as={Col}>
+                      <Card.Img  variant="top" src="War Themed\Russion Missile Launcher.jpg" style={{height: '10rem'}} />
+                      <Card.Body>
+                        <Card.Title>Russian SS-1 SCUD-B Mobile Ballistic Missile Launcher</Card.Title>
+                        <ListGroup className="list-group-flush" >
+                          <ListGroupItem>
+                            Year: 1990 
+                          </ListGroupItem>
+                          <ListGroupItem>
+                            Country: Iraq 
+                          </ListGroupItem>
+                        </ListGroup>
+                      </Card.Body>
+                      <Card.Body>
+                        <Button variant="primary" onClick={addOpen}>Edit Stamp</Button>
                       </Card.Body>
                     </Card>
                   </Row>
                 </Carousel.Item>
                 <Carousel.Item>
-                  <Row>
+                    <Row style={{padding: '0 5%'}}>
                     <Card style={{ width: '14rem'}} as={Col}>
-                      <Card.Img  variant="top" src="logo.png" style={{height: '10rem'}} />
+                      <Card.Img  variant="top" src="War Themed\Marshall Islands.jpg" style={{height: '10rem'}} />
                       <Card.Body>
-                        <Card.Title></Card.Title>
-                        <Card.Text>
-                          Some quick example text to build on the card title and make up the bulk of
-                          the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
+                        <Card.Title>World War II Invasion of Russia</Card.Title>
+                        <ListGroup className="list-group-flush" >
+                          <ListGroupItem>
+                            Year: 1991
+                          </ListGroupItem>
+                          <ListGroupItem>
+                            Country: Marshall Islands
+                          </ListGroupItem>
+                        </ListGroup>
+                      </Card.Body>
+                      <Card.Body>
+                        <Button variant="primary" onClick={addOpen}>Edit Stamp</Button>
                       </Card.Body>
                     </Card>
                     <Card style={{ width: '14rem'}} as={Col}>
-                      <Card.Img  variant="top" src="logo.png" style={{height: '10rem'}} />
+                      <Card.Img  variant="top" src="War Themed\sierraLeone.jpg" style={{height: '10rem'}} />
                       <Card.Body>
-                        <Card.Title></Card.Title>
-                        <Card.Text>
-                          Some quick example text to build on the card title and make up the bulk of
-                          the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
+                        <Card.Title>END OF WORLD WAR II 50TH ANV</Card.Title>
+                        <ListGroup className="list-group-flush" >
+                          <ListGroupItem>
+                            Year: 1995  
+                          </ListGroupItem>
+                          <ListGroupItem>
+                            Country: SIERRA LEONE
+                          </ListGroupItem>
+                        </ListGroup>
+                      </Card.Body>
+                      <Card.Body>
+                        <Button variant="primary" onClick={addOpen}>Edit Stamp</Button>
                       </Card.Body>
                     </Card>
                     <Card style={{ width: '14rem'}} as={Col}>
-                      <Card.Img  variant="top" src="logo.png" style={{height: '10rem'}} />
+                      <Card.Img  variant="top" src="War Themed\WW2 Peace Ireland.png" style={{height: '10rem'}} />
                       <Card.Body>
-                        <Card.Title></Card.Title>
-                        <Card.Text>
-                          Some quick example text to build on the card title and make up the bulk of
-                          the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
+                        <Card.Title>World war II-Peace</Card.Title>
+                        <ListGroup className="list-group-flush" >
+                          <ListGroupItem>
+                            Year: 2000
+                          </ListGroupItem>
+                          <ListGroupItem>
+                            Country: Ireland 
+                          </ListGroupItem>
+                        </ListGroup>
+                      </Card.Body>
+                      <Card.Body>
+                        <Button variant="primary" onClick={addOpen}>Edit Stamp</Button>
+                      </Card.Body>
+                    </Card>
+                    <Card style={{ width: '14rem'}} as={Col}>
+                      <Card.Img  variant="top" src="War Themed\pearlharbor.jpg" style={{height: '10rem'}} />
+                      <Card.Body>
+                        <Card.Title>JAPANESE BOMB PEARL HARBOR Remembrance Day</Card.Title>
+                        <ListGroup className="list-group-flush" >
+                          <ListGroupItem>
+                            Year: 1941 
+                          </ListGroupItem>
+                          <ListGroupItem>
+                            Country: United States
+                          </ListGroupItem>
+                        </ListGroup>
+                      </Card.Body>
+                      <Card.Body>
+                        <Button variant="primary" onClick={addOpen}>Edit Stamp</Button>
                       </Card.Body>
                     </Card>
                   </Row>
                 </Carousel.Item>
             </Carousel>
-
 
            
         </div>);
