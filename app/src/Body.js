@@ -15,6 +15,8 @@ const Tags = ['BirdThemed', 'AnimalThemed','War Stamps','Landscape Stamps','Writ
 
 function Body(props) {
 
+  const [FullScreenModal, setFullScreenModal] = useState(false);
+
   const [addShow, setAddShow] = useState(false);
   const addClose = () => setAddShow(false);
   const addOpen = () => setAddShow(true);
@@ -148,6 +150,170 @@ function EditTags(props) {
 
     return (
         <div className="body">
+           <Container fluid>
+            <Row style={{padding: '0 5%'}}>
+              
+                <Col className="align-items" style={{padding: '1% 0%'}}>
+                    <h2>All Stamps</h2>
+                </Col>
+                <Col className="align-items" style={{padding: '1% 0%'}} >
+                    <Button onClick={() => setFullScreenModal(true)}>See All Stamps</Button>
+                </Col>
+              
+            </Row>
+          </Container>
+
+            <Carousel>
+                <Carousel.Item>
+                  <Row style={{padding: '0 5%'}}>
+                  <Card style={{ width: '14rem'}} as={Col}>
+                      <Card.Img  variant="top" src="War Themed\Marshall Islands.jpg" style={{height: '10rem'}} />
+                      <Card.Body>
+                        <Card.Title>World War II Invasion of Russia</Card.Title>
+                        <ListGroup className="list-group-flush" >
+                          <ListGroupItem>
+                            Year: 1991
+                          </ListGroupItem>
+                          <ListGroupItem>
+                            Country: Marshall Islands
+                          </ListGroupItem>
+                        </ListGroup>
+                      </Card.Body>
+                      <Card.Body>
+                        <Button variant="primary" onClick={addOpen}>Edit Stamp</Button>
+                      </Card.Body>
+                    </Card>
+                    <Card style={{ width: '14rem'}} as={Col}>
+                      <Card.Img  variant="top" src="AnimalThemed\dog Stamp.jpg" style={{height: '10rem'}} />
+                      <Card.Body>
+                        <Card.Title>Atelier Acácio Santos Animal Abandonment</Card.Title>
+                        <ListGroup className="list-group-flush" >
+                          <ListGroupItem>
+                            Year: 2010
+                          </ListGroupItem>
+                          <ListGroupItem>
+                            Country: Portugal
+                          </ListGroupItem>
+                        </ListGroup>
+                      </Card.Body>
+                      <Card.Body>
+                        <Button variant="primary" onClick={addOpen}>Edit Stamp</Button>
+                        {addShow ? <EditTags Name="Grey Kangaroo, Australian Animal series" Year="2010"/>: null}
+                      </Card.Body>
+                    </Card>
+                    <Card style={{ width: '14rem'}} as={Col}>
+                      <Card.Img  variant="top" src="War Themed\antigua.jpg" style={{height: '10rem'}} />
+                      <Card.Body>
+                        <Card.Title>Antigua - Canons </Card.Title>
+                        <ListGroup className="list-group-flush" >
+                          <ListGroupItem>
+                            Year: 1978
+                          </ListGroupItem>
+                          <ListGroupItem>
+                            Country: United Kingdom 
+                          </ListGroupItem>
+                        </ListGroup>
+                      </Card.Body>
+                      <Card.Body>
+                        <Button variant="primary" onClick={addOpen}>Edit Stamp</Button>
+                      </Card.Body>
+                    </Card>
+                    <Card style={{ width: '14rem'}} as={Col}>
+                      <Card.Img  variant="top" src="AnimalThemed\Panda Stamp.jpg" style={{height: '10rem'}} />
+                      <Card.Body>
+                        <Card.Title>10 International Year of Biodiversity Panda</Card.Title>
+                        <ListGroup className="list-group-flush" >
+                          <ListGroupItem>
+                            Year: 2010
+                          </ListGroupItem>
+                          <ListGroupItem>
+                            Country: Portugal
+                          </ListGroupItem>
+                        </ListGroup>
+                      </Card.Body>
+                      <Card.Body>
+                        <Button variant="primary" onClick={addOpen}>Edit Stamp</Button>
+                      </Card.Body>
+                    </Card>
+                  </Row>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <Row style={{padding: '0 5%'}}>
+                    <Card style={{ width: '14rem'}} as={Col}>
+                      <Card.Img  variant="top" src="AnimalThemed\frog.jpg" style={{height: '10rem'}} />
+                      <Card.Body>
+                        <Card.Title>European Common Frog (Rana temporaria)</Card.Title>
+                        <ListGroup className="list-group-flush" >
+                          <ListGroupItem>
+                            Year: 2019
+                          </ListGroupItem>
+                          <ListGroupItem>
+                            Country: Russia 
+                          </ListGroupItem>
+                        </ListGroup>
+                      </Card.Body>
+                      <Card.Body>
+                        <Button variant="primary" onClick={addOpen}>Edit Stamp</Button>
+                      </Card.Body>
+                    </Card>
+                    <Card style={{ width: '14rem'}} as={Col}>
+                      <Card.Img  variant="top" src="AnimalThemed\falkland-islands-penguin.jpg" style={{height: '10rem'}} />
+                      <Card.Body>
+                        <Card.Title>Centenary 5s black and yellow-orange penguin </Card.Title>
+                        <ListGroup className="list-group-flush" >
+                          <ListGroupItem>
+                            Year: 1933
+                          </ListGroupItem>
+                          <ListGroupItem>
+                            Country: Falkland Islands
+                          </ListGroupItem>
+                        </ListGroup>
+                      </Card.Body>
+                      <Card.Body>
+                        <Button variant="primary" onClick={addOpen}>Edit Stamp</Button>
+                      </Card.Body>
+                    </Card>
+                    <Card style={{ width: '14rem'}} as={Col}>
+                      <Card.Img  variant="top" src="War Themed\sierraLeone.jpg" style={{height: '10rem'}} />
+                      <Card.Body>
+                        <Card.Title>END OF WORLD WAR II 50TH ANV</Card.Title>
+                        <ListGroup className="list-group-flush" >
+                          <ListGroupItem>
+                            Year: 1995  
+                          </ListGroupItem>
+                          <ListGroupItem>
+                            Country: SIERRA LEONE
+                          </ListGroupItem>
+                        </ListGroup>
+                      </Card.Body>
+                      <Card.Body>
+                        <Button variant="primary" onClick={addOpen}>Edit Stamp</Button>
+                      </Card.Body>
+                    </Card>
+                    <Card style={{ width: '14rem'}} as={Col}>
+                      <Card.Img  variant="top" src="War Themed\pearlharbor.jpg" style={{height: '10rem'}} />
+                      <Card.Body>
+                        <Card.Title>JAPANESE BOMB PEARL HARBOR Remembrance Day</Card.Title>
+                        <ListGroup className="list-group-flush" >
+                          <ListGroupItem>
+                            Year: 1941 
+                          </ListGroupItem>
+                          <ListGroupItem>
+                            Country: United States
+                          </ListGroupItem>
+                        </ListGroup>
+                      </Card.Body>
+                      <Card.Body>
+                        <Button variant="primary" onClick={addOpen}>Edit Stamp</Button>
+                      </Card.Body>
+                    </Card>
+                  </Row>
+                </Carousel.Item>
+            </Carousel>
+            
+          <br></br>
+
+
           <Container fluid>
             <Row style={{padding: '0 5%'}}>
               
@@ -474,6 +640,23 @@ function EditTags(props) {
                   </Row>
                 </Carousel.Item>
             </Carousel>
+
+
+
+
+
+
+
+
+      <Modal show={FullScreenModal} onHide={() => setFullScreenModal(false)} className='my-modal' >
+        <Modal.Header closeButton>
+          <Modal.Title>Modal</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Modal body content</Modal.Body>
+      </Modal>
+
+
+
 
            
         </div>);

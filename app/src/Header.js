@@ -8,7 +8,7 @@ import Slider from '@mui/material/Slider';
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import FileUploadComponent from './FileUploadComponent';
-import { FaRegEdit, FaRegTrashAlt } from "react-icons/fa";
+import { FaRegEdit, FaRegTrashAlt,FaThumbsUp } from "react-icons/fa";
 import Scroll from 'react-scroll';
 var Element = Scroll.Element;
 
@@ -93,7 +93,7 @@ function Header(props) {
     setVisibleAlert(true)
     setTimeout(() => { 
       setVisibleAlert(false)
-    }, 2000);
+    }, 1000);
   }
   const saveStamp = () =>{
       addClose()
@@ -308,8 +308,12 @@ function Header(props) {
         </Modal.Footer>
       </Modal>
 
-      <Modal show={visibleAlert}>
-                    Added Stamp
+      <Modal size="sm" show={visibleAlert} aria-labelledby="contained-modal-title-vcenter" centered >
+          <Modal.Body style={{backgroundColor: "CornflowerBlue"}}>
+          <h5 style={{textAlign: 'center'}}>
+            Stamp Was Added <FaThumbsUp/>
+          </h5>
+      </Modal.Body>
       </Modal>
 
       {dropOpen && <Dropdown />}
