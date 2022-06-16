@@ -24,7 +24,6 @@ const FileUploadComponent = () => {
             setPreview(undefined)
             return
         }
-        console.log(selectedFile)
         const objectUrl = URL.createObjectURL(selectedFile)
         setPreview(objectUrl)
 
@@ -37,7 +36,7 @@ const FileUploadComponent = () => {
             setSelectedFile(undefined)
             return
         }
-
+        console.log(e.target.files[0].mozFullPath)
         // I've kept this example simple by using the first image instead of multiple
         setSelectedFile(e.target.files[0])
     }

@@ -1,6 +1,6 @@
 import React from 'react'
 import SelectionOptions from './SelectionOptions'
-import { Button, Navbar, Nav, Form, Container, FormControl, Modal, Col, Row, ListGroup } from 'react-bootstrap'
+import { Button, Navbar, Nav, Form, Container, FormControl, Modal, Col, Row, ListGroup, Alert } from 'react-bootstrap'
 import './App.css'
 import './index.css'
 
@@ -88,6 +88,22 @@ function Header(props) {
     setFoundTags(newFoundTags);
     setTags(newTags);
   }
+  const [visibleAlert, setVisibleAlert] = useState(false);
+  const handleVisible = () => { 
+    setVisibleAlert(true)
+    setTimeout(() => { 
+      setVisibleAlert(false)
+    }, 2000);
+  }
+  const saveStamp = () =>{
+      addClose()
+      handleVisible()
+  } 
+  
+  
+
+
+
 
 
   return (
@@ -219,7 +235,7 @@ function Header(props) {
           <Button variant="secondary" onClick={addClose}>
             Close
           </Button>
-          <Button variant="primary" type="submit" onClick={addClose}>
+          <Button variant="primary" type="submit" onClick={saveStamp}>
             Save Stamp
           </Button>
         </Modal.Footer>
@@ -287,14 +303,19 @@ function Header(props) {
             Close
           </Button>
           <Button variant="primary" type="submit" onClick={tagClose}>
-            Save Stamp
+            Save Configuration
           </Button>
         </Modal.Footer>
       </Modal>
 
-
+      <Modal show={visibleAlert}>
+                    Added Stamp
+      </Modal>
 
       {dropOpen && <Dropdown />}
+
+
+      
     </div>
   );
 }
