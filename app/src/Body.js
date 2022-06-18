@@ -1,4 +1,5 @@
 
+import {StampData} from "./data"
 
 import { Button, Modal, Carousel ,Card, Col,Row, Container,ListGroup ,ListGroupItem, Form, CardImg} from 'react-bootstrap';
 import styled from "styled-components";
@@ -8,7 +9,6 @@ import SelectionOptions from './SelectionOptions'
 import Scroll from 'react-scroll';
 import './App.css'
 var Element = Scroll.Element;
-
 
 const Tags = ['BirdThemed', 'AnimalThemed','War Stamps','Landscape Stamps','Writers and Artists','Commemorative stamps','Definitive stamps','InsectThemed','People on stamps','Stamps on stamps'];
 
@@ -648,18 +648,37 @@ function EditTags(props) {
 
 
 
-      <Modal show={FullScreenModal} onHide={() => setFullScreenModal(false)} className='my-modal' >
+      <Modal show={FullScreenModal} fullscreen={true} onHide={() => setFullScreenModal(false)} className='xl' >
         <Modal.Header closeButton>
           <Modal.Title>Modal</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Modal body content</Modal.Body>
+        <Modal.Body>
+        {StampData.length > 0 && (
+          Array.from({ length: Math.ceil(StampData.length / 4) }, (_, i) => (
+          <Row className="row" key={`row${i}`}>
+            {
+            StampData.slice(i * 4, (i + 1) * 4)
+              .map((stamp, key) => (
+                <Col className="card" key={key}>{stamp.nome +
+                  " , " +
+                  stamp.Year +
+                  " ," +
+                  stamp.Country }</Col>
+              ))
+            }
+          </Row>
+          ))
+        )}
+
+
+        </Modal.Body>
       </Modal>
 
 
 
 
            
-        </div>);
+      </div>);
 }
 
 
