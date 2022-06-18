@@ -650,20 +650,32 @@ function EditTags(props) {
 
       <Modal show={FullScreenModal} fullscreen={true} onHide={() => setFullScreenModal(false)} className='xl' >
         <Modal.Header closeButton>
-          <Modal.Title>Modal</Modal.Title>
+          <Modal.Title>All Stamp</Modal.Title>
         </Modal.Header>
         <Modal.Body>
         {StampData.length > 0 && (
           Array.from({ length: Math.ceil(StampData.length / 4) }, (_, i) => (
-          <Row className="row" key={`row${i}`}>
+          <Row className="row" key={`row${i}`} style={{padding: '0 5%'}}>
             {
             StampData.slice(i * 4, (i + 1) * 4)
               .map((stamp, key) => (
-                <Col className="card" key={key}>{stamp.nome +
-                  " , " +
-                  stamp.Year +
-                  " ," +
-                  stamp.Country }</Col>
+                <Card style={{ width: '14rem'}} as={Col}>
+                <Card.Img  variant="top" src={""+stamp.imagelink} style={{height: '10rem'}} />
+                <Card.Body>
+                  <Card.Title>{stamp.nome}</Card.Title>
+                  <ListGroup className="list-group-flush" >
+                    <ListGroupItem>
+                      {"Year: " + stamp.Year}
+                    </ListGroupItem>
+                    <ListGroupItem>
+                      {"Year: " + stamp.Country}
+                    </ListGroupItem>
+                  </ListGroup>
+                </Card.Body>
+                <Card.Body>
+                  <Button variant="primary" onClick={addOpen}>Edit Stamp</Button>
+                </Card.Body>
+              </Card>
               ))
             }
           </Row>
