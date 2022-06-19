@@ -1,6 +1,6 @@
 import React from 'react'
 import SelectionOptions from './SelectionOptions'
-import { Button, Navbar, Nav, Form, Container, FormControl, Modal, Col, Row, ListGroup, Alert } from 'react-bootstrap'
+import { Button, Navbar, Nav, Form, Container, FormControl, Modal, Col, Row, ListGroup,NavDropdown,Dropdown } from 'react-bootstrap'
 import './App.css'
 import './index.css'
 
@@ -129,7 +129,6 @@ function Header(props) {
             <Nav.Link>
               <Button onClick={tagOpen}> Tags </Button>
             </Nav.Link>
-
           </Nav>
 
           <Button className='ms-auto' onClick={() => SetDropDown(!dropOpen)}> Filters </Button>
@@ -142,9 +141,13 @@ function Header(props) {
             />
           </Form>
 
+          
+            
         </Container>
 
       </Navbar>
+
+      
 
 
       {/* Modals    ---------------------------------------------------------------------------------- */}
@@ -316,8 +319,8 @@ function Header(props) {
       </Modal.Body>
       </Modal>
 
-      {dropOpen && <Dropdown />}
-
+{/*       {dropOpen && <Dropdown />}
+ */}
 
       
     </div>
@@ -326,7 +329,7 @@ function Header(props) {
 
 
 
-
+/* 
 
 function Dropdown() {
 
@@ -441,6 +444,6 @@ function Dropdown() {
       </Container>
     </div>
   );
-}
+} */
 
 export default Header

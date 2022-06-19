@@ -8,12 +8,26 @@ import React, { useEffect, useState } from "react";
 import SelectionOptions from './SelectionOptions'
 import Scroll from 'react-scroll';
 import './App.css'
+import {FaThumbsUp } from "react-icons/fa";
 var Element = Scroll.Element;
 
 const Tags = ['BirdThemed', 'AnimalThemed','War Stamps','Landscape Stamps','Writers and Artists','Commemorative stamps','Definitive stamps','InsectThemed','People on stamps','Stamps on stamps'];
 
 
 function Body(props) {
+
+  const [visibleAlert, setVisibleAlert] = useState(false);
+  const handleVisible = () => { 
+    setVisibleAlert(true)
+    setTimeout(() => { 
+      setVisibleAlert(false)
+    }, 1000);
+  }
+  const saveStamp = () =>{
+      addClose()
+      handleVisible()
+  } 
+  
 
   const [FullScreenModal, setFullScreenModal] = useState(false);
 
@@ -136,7 +150,7 @@ function EditTags(props) {
           <Button variant="secondary" onClick={addClose}>
               Close
           </Button>
-          <Button variant="primary" type="submit" onClick={addClose}>
+          <Button variant="primary" type="submit" onClick={saveStamp}>
               Save Stamp
           </Button>
       </Modal.Footer>
@@ -642,7 +656,13 @@ function EditTags(props) {
             </Carousel>
 
 
-
+            <Modal size="sm" show={visibleAlert} aria-labelledby="contained-modal-title-vcenter" centered >
+          <Modal.Body style={{backgroundColor: "CornflowerBlue"}}>
+          <h5 style={{textAlign: 'center'}}>
+            Changes were Saved <FaThumbsUp/>
+          </h5>
+      </Modal.Body>
+      </Modal>
 
 
 
@@ -650,7 +670,7 @@ function EditTags(props) {
 
       <Modal show={FullScreenModal} fullscreen={true} onHide={() => setFullScreenModal(false)} className='xl' >
         <Modal.Header closeButton>
-          <Modal.Title>All Stamp</Modal.Title>
+          <Modal.Title>All Stamps</Modal.Title>
         </Modal.Header>
         <Modal.Body>
         {StampData.length > 0 && (
