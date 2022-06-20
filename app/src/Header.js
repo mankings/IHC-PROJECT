@@ -57,6 +57,7 @@ function Header(props) {
 
   /* Tag Management ---------------------- */
   const deleteTag = (t) => {
+    SurehandleShow();
     let newTags = [];
     let newFoundTags = [];
 
@@ -102,6 +103,10 @@ function Header(props) {
   
   
 
+  const [Sureshow, setSureShow] = useState(false);
+
+  const SurehandleClose = () => setSureShow(false);
+  const SurehandleShow = () => setSureShow(true);
 
 
 
@@ -318,6 +323,30 @@ function Header(props) {
           </h5>
       </Modal.Body>
       </Modal>
+
+      <Modal
+      size="sm"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+      show={Sureshow}
+      >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+            Delete Tag
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <p>
+          Are you sure you want to complete this action? This will not delete any stamps from your collection, it will just remove this particular Tag from 
+          them.
+        </p>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={SurehandleClose}>Cancel</Button>
+        <Button variant="danger" onClick={SurehandleClose}>Continue</Button>
+      </Modal.Footer>
+    </Modal>
+
 
 {/*       {dropOpen && <Dropdown />}
  */}

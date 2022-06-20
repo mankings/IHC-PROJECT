@@ -542,7 +542,7 @@ function EditTags(props) {
                       </Card.Body>
                       <Card.Body>
                         <Button variant="primary" onClick={addOpen}>Edit Stamp</Button>
-                        {addShow ? <EditTags Name="DogStamp" Year="2010"/>: null}
+                        {addShow ? <EditTags Name="European Common Frog (Rana temporaria)" Year="2019"/>: null}
                       </Card.Body>
                     </Card>
                     <Card style={{ width: '14rem'}} as={Col}>
