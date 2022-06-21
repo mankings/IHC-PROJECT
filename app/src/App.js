@@ -5,7 +5,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 import styled from "styled-components";
-import { Dropdown } from 'react-bootstrap';
 function App() {
   return (
     <div className="app">
